@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  client-frontend:
+    image: frontend:0.0.1
+    build:
+      context: ./frontend-x-clone     
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+      
+  client-backend:
+    image: backend:0.0.1
+    build:
+      context: ./backend-x-clone
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url"  : "jdbc:postgresql://db:5432/$DB_NAME",
+        "spring.datasource.username" : "$POSTGRES_USER",
+        "spring.datasource.password" : "$POSTGRES_PASSWORD",
+        "spring.jpa.hibernate.ddl-auto" : "validate"
+      }'
+
+  flyway:
+    image: flyway/flyway
+    command: -url=jdbc:postgresql://db/ -schemas=$DB_NAME -user=$POSTGRES_USER -password=$POSTGRES_PASSWORD -connectRetries=60 migrate
+    depends_on:
+      - db
+      
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=$DB_NAME
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+    ports:
+      - 5432:5432

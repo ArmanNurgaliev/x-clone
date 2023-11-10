@@ -1,0 +1,34 @@
+.page {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: 100%;
+    align-items: center;
+}
+
+div h1 {
+    font-size: 72px;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+div h3 {
+    font-size: 32px;
+    font-weight: bold;
+    word-break: break-all;
+
+    margin: 16px 0;
+}
+
+.mark {
+    display: none;
+}
+
+@media (max-width:600px) { 
+    .mark {
+        display: block;
+    }
+
+    .left-side {
+        display: none;
+    }
+}

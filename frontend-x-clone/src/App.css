@@ -1,0 +1,51 @@
+.app {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    position: fixed;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.second {
+    position: absolute;
+    left: 310px;
+    overflow-y: auto;
+    display: flex;
+    width: -moz-available;        
+    width: -webkit-fill-available;  
+    width: fill-available;
+}
+
+.mid {
+    width: -moz-available;        
+    width: -webkit-fill-available;  
+    width: fill-available;
+
+    height: 100vh;
+    border-right: 1px solid lightgrey;
+}
+
+.right {
+    width: 600px;
+}
+
+@media (max-width: 1200px) { 
+    .second {
+        left: 230px;
+    }
+}
+
+@media (max-width: 992px) { 
+    .second {
+        left: 105px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .right {
+        display: none;
+    }
+}

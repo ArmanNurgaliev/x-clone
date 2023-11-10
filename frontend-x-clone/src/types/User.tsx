@@ -1,0 +1,20 @@
+type User = {
+    user_id: number,
+    name: string,
+    login: string,
+    email: string,
+    password: string,
+    bio: string,
+    website: string,
+    location: string,
+    roles: Role[],
+    dob: Date,
+    image: string,
+    backgroundImage: string,
+    createdAt: Date,
+    tweetData: TweetDto[],
+    followers: User[],
+    following: User[],
+    likedTweets: Tweet[],
+    likedComments: CommentType[]
+}

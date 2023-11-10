@@ -1,0 +1,55 @@
+.nav {
+    padding: 8px 48px;
+}
+
+ul {
+    width: 200px;
+}
+
+.post {
+    background-color: rgb(59 130 246);
+    color: rgb(255 255 255);
+    font-weight: 700;
+    padding: 8px 8px;
+    border-radius: 9999px;
+}
+
+.post:hover {
+    background-color: rgb(29 78 216);
+}
+
+.big-screen {
+    display: none;
+}
+
+.icon {
+    font-size: x-large;
+    margin-right: 16px;
+}
+
+@media (max-width:1200px) { 
+    .nav {
+        padding: 8px 8px;
+    }
+} 
+
+@media (max-width:992px) { 
+    .nav {
+        padding: 8px 8px;
+    }
+    ul {
+        width: 50px;
+    }
+    .small-screen {
+        display: none;
+    }
+    .big-screen {
+        display: flex;
+    }
+    .user {
+        width: fit-content;
+    }
+    .icon {
+        margin: 0;
+    }
+} 

@@ -1,0 +1,26 @@
+.image {
+    margin-left: 16px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    top: 200px;
+    height: 100px;
+    width: 100px;
+    background-size: 100px;
+    border-radius: 100%;
+}
+
+.close-sign {
+    display: flex;
+    margin: auto;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.close-sign:hover {
+    background-color: rgba(78, 70, 70, 0.5);;
+}
