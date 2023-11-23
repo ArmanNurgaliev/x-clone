@@ -14,10 +14,6 @@ import java.util.List;
 public interface UserService {
     Page<User> getAllUsers(Integer page, Integer rows, String name);
 
-    MessageResponseDto registerUser(RegistrationDto registrationDto) throws UserException, ValidationException;
-
-    LoginResponseDto login(LoginDto loginDto) throws UserException;
-
     User getUserById(Long user_id) throws UserException;
 
     User getUserByName(String name) throws UserException;
@@ -31,8 +27,6 @@ public interface UserService {
     List<User> searchUsers(String query);
 
     User editAccount(Authentication authentication, UserDto userDto) throws UserException;
-
-    RefreshTokenResponse refresh(String authorization);
 
     User getUserByToken(String token) throws UserException;
 

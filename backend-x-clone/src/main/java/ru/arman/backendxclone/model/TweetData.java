@@ -17,7 +17,6 @@ import java.util.List;
 @Entity
 public class TweetData {
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tweet_data_generator")
     @SequenceGenerator(name = "tweet_data_generator", sequenceName = "tweet_data_seq", allocationSize = 1)
     private Long id;
