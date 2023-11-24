@@ -31,7 +31,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-//@ActiveProfiles("test")
 @Transactional
 class UserControllerTest {
 
@@ -77,11 +76,6 @@ class UserControllerTest {
         userRepository.saveAll(List.of(user1, user2));
 
         token = "Bearer " + tokenService.generateAccessToken(new SecurityUser(user1));
-    }
-
-    @AfterEach
-    void tearDown() {
-        userRepository.deleteAll();
     }
 
     @Test
