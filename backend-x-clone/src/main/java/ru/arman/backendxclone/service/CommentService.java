@@ -16,7 +16,7 @@ import java.util.zip.DataFormatException;
 public interface CommentService {
     Comment getCommentById(Long comment_id) throws CommentException;
 
-    Comment createComment(Authentication authentication, TweetDto commentDto, Long tweet_id) throws UserException, TweetException, IOException;
+    Comment createComment(Authentication authentication, TweetDto commentDto, Long tweet_id) throws UserException, TweetException;
 
     MessageResponseDto likeComment(Authentication authentication, Long comment_id) throws UserException, CommentException;
 

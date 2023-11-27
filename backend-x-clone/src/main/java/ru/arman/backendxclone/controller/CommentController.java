@@ -39,7 +39,7 @@ public class CommentController {
     @PostMapping("/create/{tweet_id}")
     public ResponseEntity<Comment> createComment(Authentication authentication,
                                                  @RequestBody TweetDto commentDto,
-                                                 @PathVariable Long tweet_id) throws TweetException, UserException, IOException {
+                                                 @PathVariable Long tweet_id) throws TweetException, UserException {
         return ResponseEntity.ok(commentService.createComment(authentication, commentDto, tweet_id));
     }
 

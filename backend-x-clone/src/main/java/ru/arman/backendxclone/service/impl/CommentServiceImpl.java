@@ -40,7 +40,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Comment createComment(Authentication authentication, TweetDto commentDto, Long tweet_id) throws UserException, TweetException, IOException {
+    public Comment createComment(Authentication authentication, TweetDto commentDto, Long tweet_id) throws UserException, TweetException {
         User user = userService.getUserByName(authentication.getName());
         Tweet tweet = tweetService.getTweetById(tweet_id);
 
