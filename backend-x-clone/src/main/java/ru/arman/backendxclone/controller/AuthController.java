@@ -10,6 +10,8 @@ import ru.arman.backendxclone.exception.ValidationException;
 import ru.arman.backendxclone.service.AuthService;
 import ru.arman.backendxclone.service.UserService;
 
+import java.text.ParseException;
+
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -22,7 +24,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<MessageResponseDto> register(@Valid @RequestBody RegistrationDto registrationDto) throws UserException, ValidationException {
+    public ResponseEntity<MessageResponseDto> register(@Valid @RequestBody RegistrationDto registrationDto) throws ValidationException {
         return ResponseEntity.ok(authService.registerUser(registrationDto));
     }
 

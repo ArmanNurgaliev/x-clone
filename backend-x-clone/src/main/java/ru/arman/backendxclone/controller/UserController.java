@@ -13,6 +13,7 @@ import ru.arman.backendxclone.exception.UserException;
 import ru.arman.backendxclone.model.User;
 import ru.arman.backendxclone.service.UserService;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -69,7 +70,7 @@ public class UserController {
     }
 
     @GetMapping("/me")
-    public ResponseEntity<User> authorizedUser(@RequestHeader(HttpHeaders.AUTHORIZATION) String token) throws UserException {
+    public ResponseEntity<User> authorizedUser(@RequestHeader(HttpHeaders.AUTHORIZATION) String token) throws UserException, ParseException {
         return ResponseEntity.ok(userService.getUserByToken(token));
     }
 
