@@ -19,7 +19,7 @@ public interface TweetService {
 
     Tweet getTweetById(Long tweet_id) throws TweetException;
 
-    TweetData createTweet(Authentication authentication, TweetDto createTweetDto) throws UserException, IOException, DataFormatException;
+    TweetData createTweet(Authentication authentication, TweetDto createTweetDto) throws UserException, DataFormatException;
 
     MessageResponseDto likeTweet(Authentication authentication, Long tweet_id) throws UserException, TweetException;
 

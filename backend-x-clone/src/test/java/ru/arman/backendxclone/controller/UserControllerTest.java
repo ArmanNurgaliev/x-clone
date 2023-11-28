@@ -56,7 +56,6 @@ class UserControllerTest {
     @BeforeEach
     void dataInit() {
         user1 = new User();
-        user1.setUser_id(2L);
         user1.setName("user1");
         user1.setLogin("user123");
         user1.setEmail("user1@mail.ru");
@@ -64,7 +63,6 @@ class UserControllerTest {
         user1.getRoles().add(new Role(2L, "USER"));
 
         user2 = new User();
-        user2.setUser_id(3L);
         user2.setName("user2");
         user2.setLogin("user223");
         user2.setPassword("pass");
@@ -220,7 +218,7 @@ class UserControllerTest {
                 .perform(get("/api/users/search?q=")
                         .header(HttpHeaders.AUTHORIZATION, token))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.size()").value(2));
+                .andExpect(jsonPath("$.size()").value(3));
     }
 
     @Test

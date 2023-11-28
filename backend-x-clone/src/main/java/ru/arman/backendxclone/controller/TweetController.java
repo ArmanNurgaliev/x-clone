@@ -35,8 +35,7 @@ public class TweetController {
     @PostMapping(value = "/create")
     public ResponseEntity<TweetData> createTweet(Authentication authentication,
                                                  @RequestBody TweetDto createTweetDto
-                                                ) throws UserException, IOException, DataFormatException {
-
+                                                ) throws UserException, DataFormatException {
         return ResponseEntity.ok(tweetService.createTweet(authentication, createTweetDto));
     }
 

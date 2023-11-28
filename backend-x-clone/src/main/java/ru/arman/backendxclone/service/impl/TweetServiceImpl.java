@@ -56,7 +56,7 @@ public class TweetServiceImpl implements TweetService {
 
     @Override
     public TweetData createTweet(Authentication authentication,
-                                 TweetDto createTweetDto) throws UserException, IOException {
+                                 TweetDto createTweetDto) throws UserException {
         User user = userService.getUserByName(authentication.getName());
 
         Tweet tweet = new Tweet();
