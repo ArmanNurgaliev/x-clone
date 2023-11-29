@@ -15,7 +15,7 @@ public interface TweetDtoRepository extends JpaRepository<TweetData, Long> {
 
     List<TweetData> findByTweetIdIn(List<Long> ids);
 
-    TweetData findByTweetId(Long tweet_id);
+//    List<TweetData> findByTweetIdAAndIsRetweet(Long tweet_id, false);
 
 //    void deleteAllByUser(User user);
 }

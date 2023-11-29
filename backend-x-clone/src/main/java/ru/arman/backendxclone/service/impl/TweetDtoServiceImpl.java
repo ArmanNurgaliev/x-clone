@@ -135,7 +135,7 @@ public class TweetDtoServiceImpl implements TweetDtoService {
     @Override
     public TweetData getRepliedTweets(Authentication authentication, Long comment_id) throws CommentException {
         Comment comment = commentService.getCommentById(comment_id);
-        return tweetDtoRepository.findByTweetId(comment.getTweet().getTweet_id());
+        return tweetDtoRepository.findByTweetIdAndIsRetweet(comment.getTweet().getTweet_id(), false).get();
     }
 
     @Override
